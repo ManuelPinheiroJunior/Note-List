@@ -6,8 +6,9 @@ import { AddArea } from './components/AddArea';
 
 const App = () => {
   const [list, setList] = useState<Item[]>([
-    { id: 1, name: 'Comprar o pão na padaria', done: false },
-    { id: 2, name: 'Comprar um bolo na padaria', done: true },
+    { id: 1, name: 'meditate', done: false },
+    { id: 2, name: 'to read', done: true },
+    { id: 3, name: 'to train', done: true },
   ]);
 
   const handleAddTask = (taskName: string) => {
@@ -20,7 +21,6 @@ const App = () => {
     setList(newList);
   }
 
-  // Função feita para tarefinha de casa.
   const handleTaskChange = (id: number, done: boolean) => {
     let newList = [...list];
     for(let i in newList) {
@@ -34,7 +34,7 @@ const App = () => {
   return (
     	<C.Container>
         <C.Area>
-          <C.Header>To do List</C.Header>
+          <C.Header>To do List Daily</C.Header>
 
           <AddArea onEnter={handleAddTask} />
 
